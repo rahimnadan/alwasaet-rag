@@ -1,0 +1,8 @@
+streamlit
+pymilvus
+llama-index
+llama-index-embeddings-huggingface
+llama-index-llms-groq
+python-dotenv
+FlagEmbedding
+numpy 
