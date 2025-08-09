@@ -1,15 +1,49 @@
+---
+title: Alwasaet RAG Application
+emoji: 🚀
+colorFrom: blue
+colorTo: purple
+sdk: streamlit
+sdk_version: 1.32.0
+app_file: app.py
+pinned: false
+license: mit
+---
 
-## RAG with Milvus and Groq
+# Alwasaet RAG Application
 
-This project builds is focused to build a RAG application with **retrieval latency < 15ms**. 
+A multilingual RAG (Retrieval-Augmented Generation) application that supports:
 
-It leverages binary quantization for efficient retrieval coupled with Groq's blazing fast inference speeds.
+- 📄 **Multiple PDF uploads**
+- 🌍 **Arabic and English language support** 
+- 📚 **Citation generation**
+- ⚡ **Fast retrieval** with BGE-M3 embeddings
+- 🔍 **Binary quantization** for efficient vector search
 
-We use:
+## Features
 
-- LlamaIndex for orchestrating the RAG app.
-- Milvus vectorDB for binary vector indexing and storage.
-- Groq as the inference engine for MoonshotAI's Kimi K2.
+- Upload multiple PDF documents simultaneously
+- Ask questions in Arabic or English
+- Get accurate answers with source citations
+- Powered by BGE-M3 multilingual embeddings
+- Fast retrieval with <15ms latency
+- Groq-powered inference for quick responses
+
+## Usage
+
+1. Enter your Groq API key in the sidebar
+2. Upload your PDF documents
+3. Wait for processing to complete
+4. Ask questions about your documents
+5. Get answers with citations showing source and page numbers
+
+## Technology Stack
+
+- **Frontend**: Streamlit
+- **Embeddings**: BGE-M3 (multilingual)
+- **Vector DB**: Milvus with binary quantization
+- **LLM**: Groq (Moonshot AI Kimi K2)
+- **Languages**: Arabic, English, 100+ others
 
 ## Setup and Installation
 
