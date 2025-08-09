@@ -1,11 +1,10 @@
 ---
 title: Alwasaet RAG Application
-emoji: 🚀
+emoji: "🚀"
 colorFrom: blue
 colorTo: purple
-sdk: streamlit
-sdk_version: 1.32.0
-app_file: app.py
+sdk: docker
+app_port: 8501
 pinned: false
 license: mit
 ---
