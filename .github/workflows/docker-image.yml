@@ -1,20 +1,38 @@
-    name: Deploy to Hugging Face Space
+name: Deploy to Hugging Face Space
 
-    on:
-      push:
-        branches:
-          - main # or your default branch
+on:
+  push:
+    branches:
+      - main
 
-    jobs:
-      deploy:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v4
-          - name: Push to Hugging Face Space
-            env:
-              HF_TOKEN: ${{ secrets.HF_TOKEN }}
-            run: |
-              git config --global user.email "rahimwazir166@gmail.com"
-              git config --global user.name "rahimnadan"
-              git remote add space https://HF_USERNAME:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Abdur123/alwasaet-rag
-              git push --force space main # or your default branch
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full clone to avoid shallow update issues
+          lfs: true       # Enable LFS support
+
+      - name: Set up Git LFS
+        run: |
+          git lfs install
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "rahimwazir166@gmail.com"
+          git config --global user.name "rahimnadan"
+
+      - name: Push to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          # Remove any existing space remote
+          git remote remove space 2>/dev/null || true
+          
+          # Add Hugging Face Space remote
+          git remote add space https://Abdur123:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Abdur123/alwasaet-rag
+          
+          # Push to Hugging Face Space
+          git push space main
