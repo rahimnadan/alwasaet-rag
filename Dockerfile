@@ -25,12 +25,13 @@ RUN apt-get update && apt-get install -y \
 # Create necessary directories
 RUN mkdir -p /app/hf_cache /tmp/milvus
 
-# Copy requirements first for better Docker caching
-COPY requirements.txt .
-
-# Install Python dependencies with optimizations
+# Install specific protobuf version first to avoid conflicts
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir "protobuf>=3.20.0,<5.0.0" "grpcio>=1.60.0"
+
+# Copy requirements and install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy Streamlit configuration
 COPY .streamlit/ .streamlit/
