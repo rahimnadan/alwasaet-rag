@@ -148,7 +148,7 @@ with st.sidebar:
 
                         db_file = os.path.join(tempfile.gettempdir(), f"milvus_{session_id}.db")
                         
-                        test_embedding = embeddata.embed_model.get_text_embedding("test")
+                        test_embedding = embeddata.embed_model.encode("test")
                         actual_dim = len(test_embedding)
 
                         milvus_vdb = MilvusVDB_BQ(

@@ -2,7 +2,7 @@ import os
 import logging
 import numpy as np
 from pymilvus import MilvusClient, DataType
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from sentence_transformers import SentenceTransformer
 from llama_index.llms.groq import Groq
 from llama_index.core.base.llms.types import ChatMessage, MessageRole
 
@@ -24,15 +24,14 @@ class EmbedData:
         self.metadata = []  # Store document metadata (filename, page, etc.)
 
     def _load_embed_model(self):
-        embed_model = HuggingFaceEmbedding(
-            model_name=self.embed_model_name,
-            trust_remote_code=True,
+        embed_model = SentenceTransformer(
+            self.embed_model_name,
             cache_folder='./hf_cache'
         )
         return embed_model
 
     def generate_embedding(self, context):
-        return self.embed_model.get_text_embedding_batch(context)
+        return self.embed_model.encode(context)
 
     def _binary_quantize(self, embeddings):
         """Convert float32 embeddings to binary vectors"""
@@ -173,7 +172,7 @@ class Retriever:
             top_k = self.top_k
 
         # Generate query embedding (float32)
-        query_embedding = self.embeddata.embed_model.get_query_embedding(query)
+        query_embedding = self.embeddata.embed_model.encode(query)
         # Convert to binary vectors
         binary_query = self._binary_quantize_query(query_embedding)
 

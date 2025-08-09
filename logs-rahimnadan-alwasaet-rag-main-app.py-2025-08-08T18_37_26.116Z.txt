@@ -1,0 +1,1020 @@
+
+[     UTC     ] Logs for alwasaet-rag.streamlit.app/
+────────────────────────────────────────────────────────────────────────────────────────
+[18:32:42] 🖥 Provisioning machine...
+[18:32:42] 🎛 Preparing system...
+[18:32:42] ⛓ Spinning up manager process...
+[18:32:39] 🚀 Starting up repository: 'alwasaet-rag', branch: 'main', main module: 'app.py'
+[18:32:39] 🐙 Cloning repository...
+[18:32:40] 🐙 Cloning into '/mount/src/alwasaet-rag'...
+Warning: Permanently added the ED25519 host key for IP address '140.82.116.3' to the list of known hosts.
+
+[18:32:40] 🐙 Cloned repository!
+[18:32:40] 🐙 Pulling code changes from Github...
+[18:32:41] 📦 Processing dependencies...
+
+──────────────────────────────────────── uv ───────────────────────────────────────────
+
+Using uv pip install.
+Using Python 3.13.5 environment at /home/adminuser/venv
+Resolved 155 packages in 2.54s
+  × Failed to download and build `sentencepiece==0.2.0`
+  ╰─▶ Build backend failed to build wheel through `build_wheel` (exit status:
+      1)
+
+      [stdout]
+      running bdist_wheel
+      running build
+      running build_py
+      creating build/lib.linux-x86_64-cpython-313/sentencepiece
+      copying src/sentencepiece/__init__.py ->
+      build/lib.linux-x86_64-cpython-313/sentencepiece
+      copying src/sentencepiece/_version.py ->
+      build/lib.linux-x86_64-cpython-313/sentencepiece
+      copying src/sentencepiece/sentencepiece_model_pb2.py ->
+      build/lib.linux-x86_64-cpython-313/sentencepiece
+      copying src/sentencepiece/sentencepiece_pb2.py ->
+      build/lib.linux-x86_64-cpython-313/sentencepiece
+      running build_ext
+
+      [stderr]
+      /home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/dist.py:289:
+      UserWarning: Unknown distribution option: 'test_suite'
+        warnings.warn(msg)
+      /home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/dist.py:759:
+      SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      !!
+
+      
+      ********************************************************************************
+              Please consider removing the following classifiers in favor of a
+      SPDX license expression:
+
+              License :: OSI Approved :: Apache Software License
+
+              See
+      https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license
+      for details.
+      
+      ********************************************************************************
+
+      !!
+        self._finalize_license_expression()
+      /bin/sh: 1: pkg-config: not found
+      ./build_bundled.sh: 21: cmake: not found
+      ./build_bundled.sh: 22: cmake: not found
+      Traceback (most recent call last):
+        File "<string>", line 11, in <module>
+          wheel_filename =
+      backend.build_wheel("/home/adminuser/.cache/uv/builds-v0/.tmp2nGpWv",
+      {}, None)
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/build_meta.py",
+      line 432, in build_wheel
+          return _build(['bdist_wheel'])
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/build_meta.py",
+      line 423, in _build
+          return self._build_with_temp_dir(
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~^
+              cmd,
+              ^^^^
+          ...<3 lines>...
+              self._arbitrary_args(config_settings),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          )
+          ^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/build_meta.py",
+      line 404, in _build_with_temp_dir
+          self.run_setup()
+          ~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/build_meta.py",
+      line 512, in run_setup
+          super().run_setup(setup_script=setup_script)
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/build_meta.py",
+      line 317, in run_setup
+          exec(code, locals())
+          ~~~~^^^^^^^^^^^^^^^^
+        File "<string>", line 169, in <module>
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/__init__.py",
+      line 115, in setup
+          return distutils.core.setup(**attrs)
+                 ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/core.py",
+      line 186, in setup
+          return run_commands(dist)
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/core.py",
+      line 202, in run_commands
+          dist.run_commands()
+          ~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/dist.py",
+      line 1002, in run_commands
+          self.run_command(cmd)
+          ~~~~~~~~~~~~~~~~^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/dist.py",
+      line 1102, in run_command
+          super().run_command(command)
+          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/dist.py",
+      line 1021, in run_command
+          cmd_obj.run()
+          ~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/command/bdist_wheel.py",
+      line 370, in run
+          self.run_command("build")
+          ~~~~~~~~~~~~~~~~^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/cmd.py",
+      line 357, in run_command
+          self.distribution.run_command(command)
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/dist.py",
+      line 1102, in run_command
+          super().run_command(command)
+          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/dist.py",
+      line 1021, in run_command
+          cmd_obj.run()
+          ~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/command/build.py",
+      line 135, in run
+          self.run_command(cmd_name)
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/cmd.py",
+      line 357, in run_command
+          self.distribution.run_command(command)
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/dist.py",
+      line 1102, in run_command
+          super().run_command(command)
+          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/dist.py",
+      line 1021, in run_command
+          cmd_obj.run()
+          ~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/command/build_ext.py",
+      line 96, in run
+          _build_ext.run(self)
+          ~~~~~~~~~~~~~~^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/command/build_ext.py",
+      line 368, in run
+          self.build_extensions()
+          ~~~~~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/command/build_ext.py",
+      line 484, in build_extensions
+          self._build_extensions_serial()
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp6Lw0JC/lib/python3.13/site-packages/setuptools/_distutils/command/build_ext.py",
+      line 510, in _build_extensions_serial
+          self.build_extension(ext)
+          ~~~~~~~~~~~~~~~~~~~~^^^^^
+        File "<string>", line 87, in build_extension
+        File "/usr/local/lib/python3.13/subprocess.py", line 419, in
+      check_call
+          raise CalledProcessError(retcode, cmd)
+      subprocess.CalledProcessError: Command '['./build_bundled.sh', '0.2.0']'
+      returned non-zero exit status 127.
+
+  help: `sentencepiece` was included because `flagembedding==1.3.5` depends
+        on `sentencepiece`
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using uv pip install.
+Using Python 3.13.5 environment at /home/adminuser/venv
+Resolved 4 packages in 133ms
+Prepared 4 packages in 191ms
+Installed 4 packages in 13ms
+ + markdown-it-py==3.0.0
+ + mdurl==[2025-08-08 18:32:52.705256] 0.1.2
+ + pygments==2.19.2
+ + rich==14.1.0
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+──────────────────────────────────────── pip ───────────────────────────────────────────
+
+Using standard pip install.
+Collecting streamlit (from -r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading streamlit-1.48.0-py3-none-any.whl.metadata (9.5 kB)
+Collecting pymilvus (from -r /mount/src/alwasaet-rag/requirements.txt (line 2))
+  Downloading pymilvus-2.6.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting llama-index (from -r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_index-0.13.0-py3-none-any.whl.metadata (12 kB)
+Collecting llama-index-embeddings-huggingface (from -r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading llama_index_embeddings_huggingface-0.6.0-py3-none-any.whl.metadata (458 bytes)
+Collecting llama-index-llms-groq (from -r /mount/src/alwasaet-rag/requirements.txt (line 5))
+  Downloading llama_index_llms_groq-0.4.0-py3-none-any.whl.metadata (2.0 kB)
+Collecting python-dotenv (from -r /mount/src/alwasaet-rag/requirements.txt (line 6))
+  Downloading python_dotenv-1.1.1-py3-none-any.whl.metadata (24 kB)
+Collecting FlagEmbedding (from -r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading FlagEmbedding-1.3.5.tar.gz (163 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.9/163.9 kB 13.8 MB/s eta 0:00:00[2025-08-08 18:32:54.983761] 
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting numpy (from -r /mount/src/alwasaet-rag/requirements.txt (line 8))
+  Downloading numpy-2.3.2-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 122.6 MB/s eta 0:00:00[2025-08-08 18:32:58.585653] 
+Collecting altair!=5.4.0,!=5.4.1,<6,>=4.0 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading altair-5.5.0-py3-none-any.whl.metadata (11 kB)
+Collecting blinker<2,>=1.5.0 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting cachetools<7,>=4.0 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading cachetools-6.1.0-py3-none-any.whl.metadata (5.4 kB)
+Collecting click<9,>=7.0 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+Collecting packaging<26,>=20 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pandas<3,>=1.4.0 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading pandas-2.3.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (91 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.2/91.2 kB 140.0 MB/s eta 0:00:00[2025-08-08 18:32:59.218030] 
+Collecting pillow<12,>=7.1.0 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading pillow-11.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+Collecting protobuf<7,>=3.20 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading protobuf-6.31.1-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Collecting pyarrow>=7.0 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading pyarrow-21.0.0-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting requests<3,>=2.27 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+Collecting tenacity<10,>=8.1.0 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading tenacity-9.1.2-py3-none-any.whl.metadata (1.2 kB)
+Collecting toml<2,>=0.10.1 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+Collecting typing-extensions<5,>=4.4.0 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting watchdog<7,>=2.1.5 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.3/44.3 kB 110.7 MB/s eta 0:00:00[2025-08-08 18:33:00.524825] 
+Collecting gitpython!=3.1.19,<4,>=3.0.7 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading gitpython-3.1.45-py3-none-any.whl.metadata (13 kB)
+Collecting pydeck<1,>=0.8.0b4 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading pydeck-0.9.1-py2.py3-none-any.whl.metadata (4.1 kB)
+Collecting tornado!=6.5.0,<7,>=6.0.3 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading tornado-6.5.2-cp39-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.8 kB)
+Collecting setuptools>69 (from pymilvus->-r /mount/src/alwasaet-rag/requirements.txt (line 2))
+  Downloading setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting grpcio!=1.68.0,!=1.68.1,!=1.69.0,!=1.70.0,!=1.70.1,!=1.71.0,!=1.72.1,!=1.73.0,>=1.66.2 (from pymilvus->-r /mount/src/alwasaet-rag/requirements.txt (line 2))
+  Downloading grpcio-1.74.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
+Collecting ujson>=2.0.0 (from pymilvus->-r /mount/src/alwasaet-rag/requirements.txt (line 2))
+  Downloading ujson-5.10.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.3 kB)
+Collecting milvus-lite>=2.4.0 (from pymilvus->-r /mount/src/alwasaet-rag/requirements.txt (line 2))
+  Downloading milvus_lite-2.5.1-py3-none-manylinux2014_x86_64.whl.metadata (10.0 kB)
+Collecting llama-index-cli<0.6,>=0.5.0 (from llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_index_cli-0.5.0-py3-none-any.whl.metadata (1.4 kB)
+Collecting llama-index-core<0.14,>=0.13.0 (from llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_index_core-0.13.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting llama-index-embeddings-openai<0.6,>=0.5.0 (from llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_index_embeddings_openai-0.5.0-py3-none-any.whl.metadata (400 bytes)
+Collecting llama-index-indices-managed-llama-cloud>=0.4.0 (from llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_index_indices_managed_llama_cloud-0.9.1-py3-none-any.whl.metadata (3.5 kB)
+Collecting llama-index-llms-openai<0.6,>=0.5.0 (from llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_index_llms_openai-0.5.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting llama-index-readers-file<0.6,>=0.5.0 (from llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_index_readers_file-0.5.0-py3-none-any.whl.metadata (5.3 kB)
+Collecting llama-index-readers-llama-parse>=0.4.0 (from llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_index_readers_llama_parse-0.5.0-py3-none-any.whl.metadata (3.1 kB)
+Collecting nltk>3.8.1 (from llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading nltk-3.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting huggingface-hub>=0.19.0 (from huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading huggingface_hub-0.34.4-py3-none-any.whl.metadata (14 kB)
+Collecting sentence-transformers>=2.6.1 (from llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading sentence_transformers-5.1.0-py3-none-any.whl.metadata (16 kB)
+Collecting llama-index-llms-openai-like<0.6,>=0.5.0 (from llama-index-llms-groq->-r /mount/src/alwasaet-rag/requirements.txt (line 5))
+  Downloading llama_index_llms_openai_like-0.5.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting torch>=1.6.0 (from FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading torch-2.8.0-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (30 kB)
+Collecting transformers>=4.44.2 (from FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading transformers-4.55.0-py3-none-any.whl.metadata (39 kB)
+Collecting datasets>=2.19.0 (from FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading datasets-4.0.0-py3-none-any.whl.metadata (19 kB)
+Collecting accelerate>=0.20.1 (from FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading accelerate-1.10.0-py3-none-any.whl.metadata (19 kB)
+Collecting peft (from FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading peft-0.17.0-py3-none-any.whl.metadata (14 kB)
+Collecting ir-datasets (from FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading ir_datasets-0.5.11-py3-none-any.whl.metadata (12 kB)
+Collecting sentencepiece (from FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading sentencepiece-0.2.0.tar.gz (2.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 87.7 MB/s eta 0:00:00[2025-08-08 18:33:03.946194] 
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting psutil (from accelerate>=0.20.1->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading psutil-7.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (22 kB)
+Collecting pyyaml (from accelerate>=0.20.1->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting safetensors>=0.4.3 (from accelerate>=0.20.1->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading safetensors-0.6.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting jinja2 (from altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting jsonschema>=3.0 (from altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading jsonschema-4.25.0-py3-none-any.whl.metadata (7.7 kB)
+Collecting narwhals>=1.14.2 (from altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading narwhals-2.0.1-py3-none-any.whl.metadata (11 kB)
+Collecting filelock (from datasets>=2.19.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting dill<0.3.9,>=0.3.0 (from datasets>=2.19.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading dill-0.3.8-py3-none-any.whl.metadata (10 kB)
+Collecting tqdm>=4.66.3 (from datasets>=2.19.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.7/57.7 kB 116.0 MB/s eta 0:00:00[2025-08-08 18:33:08.622722] 
+Collecting xxhash (from datasets>=2.19.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading xxhash-3.5.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting multiprocess<0.70.17 (from datasets>=2.19.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading multiprocess-0.70.16-py312-none-any.whl.metadata (7.2 kB)
+Collecting fsspec<=2025.3.0,>=2023.1.0 (from fsspec[http]<=2025.3.0,>=2023.1.0->datasets>=2.19.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading fsspec-2025.3.0-py3-none-any.whl.metadata (11 kB)
+Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.19,<4,>=3.0.7->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub>=0.19.0->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading hf_xet-1.1.7-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (703 bytes)
+Collecting aiohttp (from huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading aiohttp-3.12.15-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+Collecting aiosqlite (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading aiosqlite-0.21.0-py3-none-any.whl.metadata (4.3 kB)
+Collecting banks<3,>=2.2.0 (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading banks-2.2.0-py3-none-any.whl.metadata (12 kB)
+Collecting dataclasses-json (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading dataclasses_json-0.6.7-py3-none-any.whl.metadata (25 kB)
+Collecting deprecated>=1.2.9.3 (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading Deprecated-1.2.18-py2.py3-none-any.whl.metadata (5.7 kB)
+Collecting dirtyjson<2,>=1.0.8 (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading dirtyjson-1.0.8-py3-none-any.whl.metadata (11 kB)
+Collecting filetype<2,>=1.2.0 (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading filetype-1.2.0-py2.py3-none-any.whl.metadata (6.5 kB)
+Collecting httpx (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting llama-index-workflows<2,>=1.0.1 (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_index_workflows-1.3.0-py3-none-any.whl.metadata (6.4 kB)
+Collecting nest-asyncio<2,>=1.5.8 (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading nest_asyncio-1.6.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting networkx>=3.0 (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading networkx-3.5-py3-none-any.whl.metadata (6.3 kB)
+Collecting platformdirs (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading platformdirs-4.3.8-py3-none-any.whl.metadata (12 kB)
+Collecting pydantic>=2.8.0 (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading pydantic-2.11.7-py3-none-any.whl.metadata (67 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.0/68.0 kB 117.3 MB/s eta 0:00:00
+Collecting sqlalchemy>=1.4.49 (from sqlalchemy[asyncio]>=1.4.49->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading sqlalchemy-2.0.42-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.6 kB)
+Collecting tiktoken>=0.7.0 (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading tiktoken-0.10.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting typing-inspect>=0.8.0 (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading typing_inspect-0.9.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting wrapt (from llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading wrapt-1.17.2-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
+Collecting openai>=1.1.0 (from llama-index-embeddings-openai<0.6,>=0.5.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading openai-1.99.5-py3-none-any.whl.metadata (29 kB)
+Collecting llama-cloud==0.1.35 (from llama-index-indices-managed-llama-cloud>=0.4.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_cloud-0.1.35-py3-none-any.whl.metadata (1.2 kB)
+Collecting certifi>=2024.7.4 (from llama-cloud==0.1.35->llama-index-indices-managed-llama-cloud>=0.4.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+Collecting beautifulsoup4<5,>=4.12.3 (from llama-index-readers-file<0.6,>=0.5.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading beautifulsoup4-4.13.4-py3-none-any.whl.metadata (3.8 kB)
+Collecting defusedxml>=0.7.1 (from llama-index-readers-file<0.6,>=0.5.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting pandas<3,>=1.4.0 (from streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 131.9 MB/s eta 0:00:00[2025-08-08 18:33:13.128450] 
+Collecting pypdf<6,>=5.1.0 (from llama-index-readers-file<0.6,>=0.5.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading pypdf-5.9.0-py3-none-any.whl.metadata (7.1 kB)
+Collecting striprtf<0.0.27,>=0.0.26 (from llama-index-readers-file<0.6,>=0.5.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading striprtf-0.0.26-py3-none-any.whl.metadata (2.1 kB)
+Collecting llama-parse>=0.5.0 (from llama-index-readers-llama-parse>=0.4.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_parse-0.6.56-py3-none-any.whl.metadata (6.6 kB)
+Collecting joblib (from nltk>3.8.1->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading joblib-1.5.1-py3-none-any.whl.metadata (5.6 kB)
+Collecting regex>=2021.8.3 (from nltk>3.8.1->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading regex-2025.7.34-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.5/40.5 kB 123.7 MB/s eta 0:00:00[2025-08-08 18:33:14.044579] 
+Collecting python-dateutil>=2.8.2 (from pandas<3,>=1.4.0->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pytz>=2020.1 (from pandas<3,>=1.4.0->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas<3,>=1.4.0->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting charset_normalizer<4,>=2 (from requests<3,>=2.27->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading charset_normalizer-3.4.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+Collecting idna<4,>=2.5 (from requests<3,>=2.27->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests<3,>=2.27->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting scikit-learn (from sentence-transformers>=2.6.1->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading scikit_learn-1.7.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+Collecting scipy (from sentence-transformers>=2.6.1->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading scipy-1.16.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 203.8 MB/s eta 0:00:00[2025-08-08 18:33:15.070826] 
+Collecting sympy>=1.13.3 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting nvidia-cuda-nvrtc-cu12==12.8.93 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime-cu12==12.8.90 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti-cu12==12.8.90 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cudnn-cu12==9.10.2.21 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cublas-cu12==12.8.4.1 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufft-cu12==11.3.3.83 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-curand-cu12==10.3.9.90 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cusolver-cu12==11.7.3.90 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparse-cu12==12.5.8.93 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparselt-cu12==0.7.1 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl.metadata (7.0 kB)
+Collecting nvidia-nccl-cu12==2.27.3 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_nccl_cu12-2.27.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.0 kB)
+Collecting nvidia-nvtx-cu12==12.8.90 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink-cu12==12.8.93 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufile-cu12==1.13.1.3 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting triton==3.4.0 (from torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading triton-3.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Collecting tokenizers<0.22,>=0.21 (from transformers>=4.44.2->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading tokenizers-0.21.4-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting inscriptis>=2.2.0 (from ir-datasets->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading inscriptis-2.6.0-py3-none-any.whl.metadata (25 kB)
+Collecting lxml>=4.5.2 (from ir-datasets->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading lxml-6.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting trec-car-tools>=2.5.4 (from ir-datasets->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading trec_car_tools-2.6-py3-none-any.whl.metadata (640 bytes)
+Collecting lz4>=3.1.10 (from ir-datasets->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading lz4-4.4.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
+Collecting warc3-wet>=0.2.3 (from ir-datasets->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading warc3_wet-0.2.5-py3-none-any.whl.metadata (2.2 kB)
+Collecting warc3-wet-clueweb09>=0.2.5 (from ir-datasets->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading warc3-wet-clueweb09-0.2.5.tar.gz (17 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting zlib-state>=0.1.3 (from ir-datasets->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading zlib_state-0.1.9-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.3 kB)
+Collecting ijson>=3.1.3 (from ir-datasets->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading ijson-3.4.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (21 kB)
+Collecting unlzw3>=0.2.1 (from ir-datasets->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading unlzw3-0.2.3-py3-none-any.whl.metadata (2.3 kB)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting attrs>=17.3.0 (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading frozenlist-1.7.0-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+Collecting multidict<7.0,>=4.5 (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading multidict-6.6.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+Collecting propcache>=0.2.0 (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading propcache-0.3.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting yarl<2.0,>=1.17.0 (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading yarl-1.20.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (73 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.9/73.9 kB 122.1 MB/s eta 0:00:00[2025-08-08 18:33:22.763520] 
+Collecting griffe (from banks<3,>=2.2.0->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading griffe-1.11.0-py3-none-any.whl.metadata (5.0 kB)
+Collecting soupsieve>1.2 (from beautifulsoup4<5,>=4.12.3->llama-index-readers-file<0.6,>=0.5.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading soupsieve-2.7-py3-none-any.whl.metadata (4.6 kB)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.19,<4,>=3.0.7->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB)
+Collecting anyio (from httpx->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading anyio-4.10.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting httpcore==1.* (from httpx->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading jsonschema_specifications-2025.4.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading referencing-0.36.2-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.7.1 (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading rpds_py-0.27.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Collecting llama-index-instrumentation>=0.1.0 (from llama-index-workflows<2,>=1.0.1->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_index_instrumentation-0.4.0-py3-none-any.whl.metadata (252 bytes)
+Collecting llama-cloud-services>=0.6.56 (from llama-parse>=0.5.0->llama-index-readers-llama-parse>=0.4.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_cloud_services-0.6.56-py3-none-any.whl.metadata (3.7 kB)
+Collecting distro<2,>=1.7.0 (from openai>=1.1.0->llama-index-embeddings-openai<0.6,>=0.5.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+Collecting jiter<1,>=0.4.0 (from openai>=1.1.0->llama-index-embeddings-openai<0.6,>=0.5.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading jiter-0.10.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+Collecting sniffio (from openai>=1.1.0->llama-index-embeddings-openai<0.6,>=0.5.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.8.0->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.33.2 (from pydantic>=2.8.0->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading pydantic_core-2.33.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting typing-inspection>=0.4.0 (from pydantic>=2.8.0->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas<3,>=1.4.0->streamlit->-r /mount/src/alwasaet-rag/requirements.txt (line 1))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting greenlet>=1 (from sqlalchemy>=1.4.49->sqlalchemy[asyncio]>=1.4.49->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading greenlet-3.2.4-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (4.1 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch>=1.6.0->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting cbor>=1.0.0 (from trec-car-tools>=2.5.4->ir-datasets->FlagEmbedding->-r /mount/src/alwasaet-rag/requirements.txt (line 7))
+  Downloading cbor-1.0.0.tar.gz (20 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting mypy-extensions>=0.3.0 (from typing-inspect>=0.8.0->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting marshmallow<4.0.0,>=3.18.0 (from dataclasses-json->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading marshmallow-3.26.1-py3-none-any.whl.metadata (7.3 kB)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn->sentence-transformers>=2.6.1->llama-index-embeddings-huggingface->-r /mount/src/alwasaet-rag/requirements.txt (line 4))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+INFO: pip is looking at multiple versions of llama-cloud-services to determine which version is compatible with other requirements. This could take a while.
+Collecting llama-parse>=0.5.0 (from llama-index-readers-llama-parse>=0.4.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_parse-0.6.55-py3-none-any.whl.metadata (6.6 kB)
+Collecting llama-cloud-services>=0.6.55 (from llama-parse>=0.5.0->llama-index-readers-llama-parse>=0.4.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_cloud_services-0.6.55-py3-none-any.whl.metadata (3.7 kB)
+Collecting llama-parse>=0.5.0 (from llama-index-readers-llama-parse>=0.4.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_parse-0.6.54-py3-none-any.whl.metadata (6.6 kB)
+Collecting llama-cloud-services>=0.6.54 (from llama-parse>=0.5.0->llama-index-readers-llama-parse>=0.4.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading llama_cloud_services-0.6.54-py3-none-any.whl.metadata (3.6 kB)
+Collecting colorama>=0.4 (from griffe->banks<3,>=2.2.0->llama-index-core<0.14,>=0.13.0->llama-index->-r /mount/src/alwasaet-rag/requirements.txt (line 3))
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Downloading streamlit-1.48.0-py3-none-any.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 64.0 MB/s eta 0:00:00
+Downloading pymilvus-2.6.0-py3-none-any.whl (248 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 248.3/248.3 kB 139.1 MB/s eta 0:00:00
+Downloading llama_index-0.13.0-py3-none-any.whl (7.0 kB)
+Downloading llama_index_embeddings_huggingface-0.6.0-py3-none-any.whl (8.9 kB)
+Downloading llama_index_llms_groq-0.4.0-py3-none-any.whl (3.7 kB)
+Downloading python_dotenv-1.1.1-py3-none-any.whl (20 kB)
+Downloading numpy-2.3.2-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 136.9 MB/s eta 0:00:00
+Downloading accelerate-1.10.0-py3-none-any.whl (374 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 374.7/374.7 kB 170.6 MB/s eta 0:00:00[2025-08-08 18:33:36.896227] 
+Downloading altair-5.5.0-py3-none-any.whl (731 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.2/731.2 kB 187.1 MB/s eta 0:00:00[2025-08-08 18:33:36.913646] 
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading cachetools-6.1.0-py3-none-any.whl (11 kB)
+Downloading click-8.2.1-py3-none-any.whl (102 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 102.2/102.2 kB 133.2 MB/s eta 0:00:00[2025-08-08 18:33:36.948189] 
+Downloading datasets-4.0.0-py3-none-any.whl (494 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 494.8/494.8 kB 123.2 MB/s eta 0:00:00[2025-08-08 18:33:36.966193] 
+Downloading gitpython-3.1.45-py3-none-any.whl (208 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 208.2/208.2 kB 143.7 MB/s eta 0:00:00[2025-08-08 18:33:36.981452] 
+Downloading grpcio-1.74.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 129.1 MB/s eta 0:00:00[2025-08-08 18:33:37.043458] 
+Downloading huggingface_hub-0.34.4-py3-none-any.whl (561 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 561.5/561.5 kB 228.3 MB/s eta 0:00:00[2025-08-08 18:33:37.058277] 
+Downloading llama_index_cli-0.5.0-py3-none-any.whl (28 kB)
+Downloading llama_index_core-0.13.0-py3-none-any.whl (7.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.6/7.6 MB 204.4 MB/s eta 0:00:00[2025-08-08 18:33:37.120360] 
+Downloading llama_index_embeddings_openai-0.5.0-py3-none-any.whl (7.0 kB)
+Downloading llama_index_indices_managed_llama_cloud-0.9.1-py3-none-any.whl (16 kB)
+Downloading Deprecated-1.2.18-py2.py3-none-any.whl (10.0 kB)
+Downloading llama_cloud-0.1.35-py3-none-any.whl (303 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 303.3/303.3 kB 230.1 MB/s eta 0:00:00[2025-08-08 18:33:37.165587] 
+Downloading llama_index_llms_openai-0.5.2-py3-none-any.whl (25 kB)
+Downloading llama_index_llms_openai_like-0.5.0-py3-none-any.whl (4.6 kB)
+Downloading llama_index_readers_file-0.5.0-py3-none-any.whl (41 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.0/41.0 kB 101.8 MB/s eta 0:00:00[2025-08-08 18:33:37.203104] 
+Downloading llama_index_readers_llama_parse-0.5.0-py3-none-any.whl (3.2 kB)
+Downloading milvus_lite-2.5.1-py3-none-manylinux2014_x86_64.whl (55.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.3/55.3 MB 132.5 MB/s eta 0:00:00[2025-08-08 18:33:37.699179] 
+Downloading nltk-3.9.1-py3-none-any.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 134.1 MB/s eta 0:00:00[2025-08-08 18:33:37.723850] 
+Downloading packaging-25.0-py3-none-any.whl (66 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 115.2 MB/s eta 0:00:00[2025-08-08 18:33:37.738269] 
+Downloading pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 193.0 MB/s eta 0:00:00[2025-08-08 18:33:37.827395] 
+Downloading pillow-11.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 207.7 MB/s eta 0:00:00[2025-08-08 18:33:37.871520] 
+Downloading protobuf-6.31.1-cp39-abi3-manylinux2014_x86_64.whl (321 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 321.1/321.1 kB 234.0 MB/s eta 0:00:00[2025-08-08 18:33:37.885112] 
+Downloading pyarrow-21.0.0-cp313-cp313-manylinux_2_28_x86_64.whl (42.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.8/42.8 MB 205.5 MB/s eta 0:00:00[2025-08-08 18:33:38.105022] 
+Downloading pydeck-0.9.1-py2.py3-none-any.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 179.4 MB/s eta 0:00:00[2025-08-08 18:33:38.157564] 
+Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.8/64.8 kB 200.1 MB/s eta 0:00:00[2025-08-08 18:33:38.170246] 
+Downloading sentence_transformers-5.1.0-py3-none-any.whl (483 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 483.4/483.4 kB 242.8 MB/s eta 0:00:00[2025-08-08 18:33:38.184548] 
+Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 225.6 MB/s eta 0:00:00[2025-08-08 18:33:38.202101] 
+Downloading tenacity-9.1.2-py3-none-any.whl (28 kB)
+Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Downloading torch-2.8.0-cp313-cp313-manylinux_2_28_x86_64.whl (887.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 887.9/887.9 MB 107.7 MB/s eta 0:00:00[2025-08-08 18:33:45.832718] 
+Downloading nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl (594.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 594.3/594.3 MB 92.1 MB/s eta 0:00:00[2025-08-08 18:33:54.613263] 
+Downloading nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (10.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 94.2 MB/s eta 0:00:00[2025-08-08 18:33:54.736110] 
+Downloading nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (88.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 88.0/88.0 MB 74.1 MB/s eta 0:00:00[2025-08-08 18:33:55.835871] 
+Downloading nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (954 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 954.8/954.8 kB 66.5 MB/s eta 0:00:00[2025-08-08 18:33:55.880127] 
+Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl (706.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 706.8/706.8 MB 50.1 MB/s eta 0:00:00[2025-08-08 18:34:06.903695] 
+Downloading nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (193.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.1/193.1 MB 78.1 MB/s eta 0:00:00[2025-08-08 18:34:09.795646] 
+Downloading nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 63.5 MB/s eta 0:00:00[2025-08-08 18:34:09.828682] 
+Downloading nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl (63.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.6/63.6 MB 47.9 MB/s eta 0:00:00
+Downloading nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl (267.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 267.5/267.5 MB 42.1 MB/s eta 0:00:00[2025-08-08 18:34:14.821985] 
+Downloading nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (288.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 288.2/288.2 MB 83.7 MB/s eta 0:00:00[2025-08-08 18:34:19.745267] 
+Downloading nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl (287.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 287.2/287.2 MB 116.6 MB/s eta 0:00:00[2025-08-08 18:34:22.684734] 
+Downloading nvidia_nccl_cu12-2.27.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (322.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 322.4/322.4 MB 149.9 MB/s eta 0:00:00[2025-08-08 18:34:25.248446] 
+Downloading nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (39.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 39.3/39.3 MB 176.5 MB/s eta 0:00:00[2025-08-08 18:34:25.564132] 
+Downloading nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (89 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.0/90.0 kB 215.3 MB/s eta 0:00:00[2025-08-08 18:34:25.577307] 
+Downloading triton-3.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (155.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.6/155.6 MB 182.7 MB/s eta 0:00:00[2025-08-08 18:34:27.063005] 
+Downloading tornado-6.5.2-cp39-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (443 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 443.9/443.9 kB 207.2 MB/s eta 0:00:00[2025-08-08 18:34:27.077245] 
+Downloading transformers-4.55.0-py3-none-any.whl (11.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 156.8 MB/s eta 0:00:00[2025-08-08 18:34:27.160656] 
+Downloading typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 kB 186.4 MB/s eta 0:00:00[2025-08-08 18:34:27.172856] 
+Downloading ujson-5.10.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (53 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.7/53.7 kB 118.2 MB/s eta 0:00:00[2025-08-08 18:34:27.187214] 
+Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.1/79.1 kB 121.9 MB/s eta 0:00:00[2025-08-08 18:34:27.201447] 
+Downloading ir_datasets-0.5.11-py3-none-any.whl (866 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 866.1/866.1 kB 119.1 MB/s eta 0:00:00[2025-08-08 18:34:27.226678] 
+Downloading peft-0.17.0-py3-none-any.whl (503 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 503.9/503.9 kB 115.7 MB/s eta 0:00:00[2025-08-08 18:34:27.245736] 
+Downloading aiohttp-3.12.15-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 119.1 MB/s eta 0:00:00[2025-08-08 18:34:27.275265] 
+Downloading banks-2.2.0-py3-none-any.whl (29 kB)
+Downloading beautifulsoup4-4.13.4-py3-none-any.whl (187 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 187.3/187.3 kB 137.6 MB/s eta 0:00:00[2025-08-08 18:34:27.301980] 
+Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 161.2/161.2 kB 126.7 MB/s eta 0:00:00[2025-08-08 18:34:27.320499] 
+Downloading charset_normalizer-3.4.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (148 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 148.2/148.2 kB 89.0 MB/s eta 0:00:00[2025-08-08 18:34:27.336137] 
+Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Downloading dill-0.3.8-py3-none-any.whl (116 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 116.3/116.3 kB 140.0 MB/s eta 0:00:00[2025-08-08 18:34:27.362115] 
+Downloading dirtyjson-1.0.8-py3-none-any.whl (25 kB)
+Downloading filetype-1.2.0-py2.py3-none-any.whl (19 kB)
+Downloading fsspec-2025.3.0-py3-none-any.whl (193 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.6/193.6 kB 141.2 MB/s eta 0:00:00[2025-08-08 18:34:27.400355] 
+Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 102.0 MB/s eta 0:00:00[2025-08-08 18:34:27.415094] 
+Downloading hf_xet-1.1.7-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 124.6 MB/s eta 0:00:00[2025-08-08 18:34:27.455375] 
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 57.4 MB/s eta 0:00:00[2025-08-08 18:34:27.470672] 
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 141.9 MB/s eta 0:00:00[2025-08-08 18:34:27.485780] 
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 105.7 MB/s eta 0:00:00[2025-08-08 18:34:27.500822] 
+Downloading ijson-3.4.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (148 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 148.9/148.9 kB 98.8 MB/s eta 0:00:00[2025-08-08 18:34:27.517389] 
+Downloading inscriptis-2.6.0-py3-none-any.whl (45 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.1/45.1 kB 115.7 MB/s eta 0:00:00[2025-08-08 18:34:27.534064] 
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 70.0 MB/s eta 0:00:00[2025-08-08 18:34:27.551389] 
+Downloading jsonschema-4.25.0-py3-none-any.whl (89 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.2/89.2 kB 115.9 MB/s eta 0:00:00[2025-08-08 18:34:27.566981] 
+Downloading llama_index_workflows-1.3.0-py3-none-any.whl (42 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.5/42.5 kB 115.6 MB/s eta 0:00:00[2025-08-08 18:34:27.581741] 
+Downloading llama_parse-0.6.54-py3-none-any.whl (4.9 kB)
+Downloading llama_cloud_services-0.6.54-py3-none-any.whl (63 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.9/63.9 kB 148.8 MB/s eta 0:00:00[2025-08-08 18:34:27.607093] 
+Downloading lxml-6.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 117.7 MB/s eta 0:00:00[2025-08-08 18:34:27.666081] 
+Downloading lz4-4.4.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 128.5 MB/s eta 0:00:00[2025-08-08 18:34:27.695135] 
+Downloading multiprocess-0.70.16-py312-none-any.whl (146 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 146.7/146.7 kB 202.2 MB/s eta 0:00:00[2025-08-08 18:34:27.709675] 
+Downloading narwhals-2.0.1-py3-none-any.whl (385 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 385.4/385.4 kB 195.0 MB/s eta 0:00:00[2025-08-08 18:34:27.723628] 
+Downloading nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
+Downloading networkx-3.5-py3-none-any.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 165.3 MB/s eta 0:00:00[2025-08-08 18:34:27.757709] 
+Downloading openai-1.99.5-py3-none-any.whl (786 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 786.2/786.2 kB 189.1 MB/s eta 0:00:00[2025-08-08 18:34:27.773704] 
+Downloading platformdirs-4.3.8-py3-none-any.whl (18 kB)
+Downloading pydantic-2.11.7-py3-none-any.whl (444 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 444.8/444.8 kB 175.4 MB/s eta 0:00:00[2025-08-08 18:34:27.797956] 
+Downloading pydantic_core-2.33.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 102.1 MB/s eta 0:00:00[2025-08-08 18:34:27.829519] 
+Downloading pypdf-5.9.0-py3-none-any.whl (313 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 313.2/313.2 kB 198.8 MB/s eta 0:00:00[2025-08-08 18:34:27.842879] 
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 139.1 MB/s eta 0:00:00[2025-08-08 18:34:27.856819] 
+Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 209.8 MB/s eta 0:00:00[2025-08-08 18:34:27.871684] 
+Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 759.5/759.5 kB 169.6 MB/s eta 0:00:00[2025-08-08 18:34:27.889036] 
+Downloading regex-2025.7.34-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 801.9/801.9 kB 168.4 MB/s eta 0:00:00[2025-08-08 18:34:27.906135] 
+Downloading safetensors-0.6.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (485 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 485.8/485.8 kB 222.5 MB/s eta 0:00:00[2025-08-08 18:34:27.923285] 
+Downloading sqlalchemy-2.0.42-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 112.4 MB/s eta 0:00:00[2025-08-08 18:34:27.965329] 
+Downloading striprtf-0.0.26-py3-none-any.whl (6.9 kB)
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 106.7 MB/s eta 0:00:00[2025-08-08 18:34:28.049778] 
+Downloading tiktoken-0.10.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 109.4 MB/s eta 0:00:00[2025-08-08 18:34:28.076174] 
+Downloading tokenizers-0.21.4-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 99.1 MB/s eta 0:00:00[2025-08-08 18:34:28.123429] 
+Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 120.8 MB/s eta 0:00:00[2025-08-08 18:34:28.138711] 
+Downloading trec_car_tools-2.6-py3-none-any.whl (8.4 kB)
+Downloading typing_inspect-0.9.0-py3-none-any.whl (8.8 kB)
+Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 347.8/347.8 kB 207.2 MB/s eta 0:00:00[2025-08-08 18:34:28.176162] 
+Downloading unlzw3-0.2.3-py3-none-any.whl (6.7 kB)
+Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 kB 129.3 MB/s eta 0:00:00[2025-08-08 18:34:28.203450] 
+Downloading warc3_wet-0.2.5-py3-none-any.whl (18 kB)
+Downloading wrapt-1.17.2-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (89 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.2/89.2 kB 77.2 MB/s eta 0:00:00[2025-08-08 18:34:28.230411] 
+Downloading zlib_state-0.1.9-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (22 kB)
+Downloading aiosqlite-0.21.0-py3-none-any.whl (15 kB)
+Downloading dataclasses_json-0.6.7-py3-none-any.whl (28 kB)
+Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+Downloading joblib-1.5.1-py3-none-any.whl (307 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 307.7/307.7 kB 158.4 MB/s eta 0:00:00[2025-08-08 18:34:28.288037] 
+Downloading psutil-7.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (277 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 278.0/278.0 kB 209.1 MB/s eta 0:00:00[2025-08-08 18:34:28.302772] 
+Downloading scikit_learn-1.7.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.4/9.4 MB 112.5 MB/s eta 0:00:00[2025-08-08 18:34:28.402614] 
+Downloading scipy-1.16.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (35.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.2/35.2 MB 110.9 MB/s eta 0:00:00
+Downloading xxhash-3.5.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (194 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 194.4/194.4 kB 127.2 MB/s eta 0:00:00[2025-08-08 18:34:28.754212] 
+Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading anyio-4.10.0-py3-none-any.whl (107 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.2/107.2 kB 132.5 MB/s eta 0:00:00[2025-08-08 18:34:28.803074] 
+Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.8/63.8 kB 111.6 MB/s eta 0:00:00[2025-08-08 18:34:28.819101] 
+Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+Downloading frozenlist-1.7.0-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (232 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 232.2/232.2 kB 139.4 MB/s eta 0:00:00[2025-08-08 18:34:28.845448] 
+Downloading greenlet-3.2.4-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (610 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 610.5/610.5 kB 136.6 MB/s eta 0:00:00[2025-08-08 18:34:28.866230] 
+Downloading jiter-0.10.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (350 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 350.7/350.7 kB 129.0 MB/s eta 0:00:00[2025-08-08 18:34:28.884977] 
+Downloading jsonschema_specifications-2025.4.1-py3-none-any.whl (18 kB)
+Downloading llama_index_instrumentation-0.4.0-py3-none-any.whl (14 kB)
+Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+Downloading marshmallow-3.26.1-py3-none-any.whl (50 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.9/50.9 kB 121.5 MB/s eta 0:00:00[2025-08-08 18:34:28.931060] 
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 122.3 MB/s eta 0:00:00[2025-08-08 18:34:28.953585] 
+Downloading multidict-6.6.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 254.3/254.3 kB 136.4 MB/s eta 0:00:00[2025-08-08 18:34:28.970103] 
+Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Downloading propcache-0.3.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (206 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.4/206.4 kB 128.0 MB/s eta 0:00:00[2025-08-08 18:34:28.997510] 
+Downloading referencing-0.36.2-py3-none-any.whl (26 kB)
+Downloading rpds_py-0.27.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (385 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 385.9/385.9 kB 130.7 MB/s eta 0:00:00[2025-08-08 18:34:29.025244] 
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading smmap-5.0.2-py3-none-any.whl (24 kB)
+Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+Downloading soupsieve-2.7-py3-none-any.whl (36 kB)
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Downloading typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+Downloading yarl-1.20.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (352 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 352.6/352.6 kB 205.4 MB/s eta 0:00:00[2025-08-08 18:34:29.101694] 
+Downloading griffe-1.11.0-py3-none-any.whl (137 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.6/137.6 kB 197.5 MB/s eta 0:00:00[2025-08-08 18:34:29.115764] 
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Building wheels for collected packages: FlagEmbedding, sentencepiece, warc3-wet-clueweb09, cbor
+  Building wheel for FlagEmbedding (pyproject.toml): started
+  Building wheel for FlagEmbedding (pyproject.toml): finished with status 'done'
+  Created wheel for FlagEmbedding: filename=flagembedding-1.3.5-py3-none-any.whl size=233822 sha256=6d5c0b8aec0530be19e4b2d807bb9ae899962ea878b70260a8131e300b4f00b9
+  Stored in directory: /tmp/pip-ephem-wheel-cache-syu1mzr3/wheels/62/9f/3e/db03455e876e58faec55a1595fcdfb7cfda4783f485ef387d7
+  Building wheel for sentencepiece (pyproject.toml): started
+  Building wheel for sentencepiece (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Building wheel for sentencepiece (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [118 lines of output]
+      /tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'test_suite'
+        warnings.warn(msg)
+      /tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      !!
+      
+              ********************************************************************************
+              Please consider removing the following classifiers in favor of a SPDX license expression:
+      
+              License :: OSI Approved :: Apache Software License
+      
+              See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+              ********************************************************************************
+      
+      !!
+        self._finalize_license_expression()
+      running bdist_wheel
+      running build
+      running build_py
+      creating build/lib.linux-x86_64-cpython-313/sentencepiece
+      copying src/sentencepiece/__init__.py -> build/lib.linux-x86_64-cpython-313/sentencepiece
+      copying src/sentencepiece/_version.py -> build/lib.linux-x86_64-cpython-313/sentencepiece
+      copying src/sentencepiece/sentencepiece_model_pb2.py -> build/lib.linux-x86_64-cpython-313/sentencepiece
+      copying src/sentencepiece/sentencepiece_pb2.py -> build/lib.linux-x86_64-cpython-313/sentencepiece
+      running build_ext
+      /bin/sh: 1: pkg-config: not found
+      ./build_bundled.sh: 21: cmake: not found
+      ./build_bundled.sh: 22: cmake: not found
+      Traceback (most recent call last):
+        File "/home/adminuser/venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+          ~~~~^^
+        File "/home/adminuser/venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+                                   ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/adminuser/venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 251, in build_wheel
+          return _build_backend().build_wheel(wheel_directory, config_settings,
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                              metadata_directory)
+                                              ^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/build_meta.py", line 435, in build_wheel
+          return _build(['bdist_wheel', '--dist-info-dir', str(metadata_directory)])
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/build_meta.py", line 423, in _build
+          return self._build_with_temp_dir(
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~^
+              cmd,
+              ^^^^
+          ...<3 lines>...
+              self._arbitrary_args(config_settings),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          )
+          ^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/build_meta.py", line 404, in _build_with_temp_dir
+          self.run_setup()
+          ~~~~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/build_meta.py", line 512, in run_setup
+          super().run_setup(setup_script=setup_script)
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+          ~~~~^^^^^^^^^^^^^^^^
+        File "<string>", line 169, in <module>
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/__init__.py", line 115, in setup
+          return distutils.core.setup(**attrs)
+                 ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/core.py", line 186, in setup
+          return run_commands(dist)
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/core.py", line 202, in run_commands
+          dist.run_commands()
+          ~~~~~~~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/dist.py", line 1002, in run_commands
+          self.run_command(cmd)
+          ~~~~~~~~~~~~~~~~^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/dist.py", line 1102, in run_command
+          super().run_command(command)
+          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/dist.py", line 1021, in run_command
+          cmd_obj.run()
+          ~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/command/bdist_wheel.py", line 370, in run
+          self.run_command("build")
+          ~~~~~~~~~~~~~~~~^^^^^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/cmd.py", line 357, in run_command
+          self.distribution.run_command(command)
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/dist.py", line 1102, in run_command
+          super().run_command(command)
+          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/dist.py", line 1021, in run_command
+          cmd_obj.run()
+          ~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/command/build.py", line 135, in run
+          self.run_command(cmd_name)
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/cmd.py", line 357, in run_command
+          self.distribution.run_command(command)
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/dist.py", line 1102, in run_command
+          super().run_command(command)
+          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/dist.py", line 1021, in run_command
+          cmd_obj.run()
+          ~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/command/build_ext.py", line 96, in run
+          _build_ext.run(self)
+          ~~~~~~~~~~~~~~^^^^^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/command/build_ext.py", line 368, in run
+          self.build_extensions()
+          ~~~~~~~~~~~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/command/build_ext.py", line 484, in build_extensions
+          self._build_extensions_serial()
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-jx7mzskx/overlay/lib/python3.13/site-packages/setuptools/_distutils/command/build_ext.py", line 510, in _build_extensions_serial
+          self.build_extension(ext)
+          ~~~~~~~~~~~~~~~~~~~~^^^^^
+        File "<string>", line 87, in build_extension
+        File "/usr/local/lib/python3.13/subprocess.py", line 419, in check_call
+          raise CalledProcessError(retcode, cmd)
+      subprocess.CalledProcessError: Command '['./build_bundled.sh', '0.2.0']' returned non-zero exit status 127.
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for sentencepiece
+  Building wheel for warc3-wet-clueweb09 (pyproject.toml): started
+  Building wheel for warc3-wet-clueweb09 (pyproject.toml): finished with status 'done'
+  Created wheel for warc3-wet-clueweb09: filename=warc3_wet_clueweb09-0.2.5-py3-none-any.whl size=18997 sha256=da6f02bd7e100c988fdff379c19e4f87fd6a04f161e116d78ea8212dc6769d8a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-syu1mzr3/wheels/89/c7/a5/fb6e58df5170b015945f3ca2f220b3fd8cfbcbfde1294aee25
+  Building wheel for cbor (pyproject.toml): started
+  Building wheel for cbor (pyproject.toml): finished with status 'done'
+  Created wheel for cbor: filename=cbor-1.0.0-cp313-cp313-linux_x86_64.whl size=55324 sha256=38f3a47db799d5f6882f4fe351f622a69b2c328cbed32a982eaec4993f5451b2
+  Stored in directory: /tmp/pip-ephem-wheel-cache-syu1mzr3/wheels/03/01/db/836b80476f4d5f634a40b15f4121e7b095a028bd0fdc95c319
+Successfully built FlagEmbedding warc3-wet-clueweb09 cbor
+Failed to build sentencepiece
+ERROR: Could not build wheels for sentencepiece, which is required to install pyproject.toml-based projects
+
+[notice] A new release of pip is available: 24.0 -> 25.2
+[notice] To update, run: pip install --upgrade pip
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using standard pip install.
+Collecting rich>=10.14.0
+  Downloading rich-14.1.0-py3-none-any.whl.metadata (18 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=10.14.0)
+  Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.14.0)
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.14.0)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading rich-14.1.0-py3-none-any.whl (243 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.4/243.4 kB 13.2 MB/s eta 0:00:00[2025-08-08 18:34:57.699691] 
+Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 127.9 MB/s eta 0:00:00[2025-08-08 18:34:57.713432] 
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 85.3 MB/s eta 0:00:00[2025-08-08 18:34:57.741214] 
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: pygments, mdurl, markdown-it-py, rich
+  Attempting uninstall: pygments
+    Found existing installation: Pygments 2.19.2
+    Uninstalling Pygments-2.19.2:
+      Successfully uninstalled Pygments-2.19.2
+  Attempting uninstall: mdurl
+    Found existing installation: mdurl 0.1.2
+    Uninstalling mdurl-0.1.2:
+      Successfully uninstalled mdurl-0.1.2
+  Attempting uninstall: markdown-it-py
+    Found existing installation: markdown-it-py 3.0.0
+    Uninstalling markdown-it-py-3.0.0:
+      Successfully uninstalled markdown-it-py-3.0.0
+  Attempting uninstall: rich
+    Found existing installation: rich 14.1.0
+    Uninstalling rich-14.1.0:
+      Successfully uninstalled rich-14.1.0
+Successfully installed markdown-it-py-3.0.0 mdurl-0.1.2 pygments-2.19.2 rich-14.1.0
+
+[notice] A new release of pip is available: 24.0 -> 25.2
+[notice] To update, run: pip install --upgrade pip
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+[18:35:00] ❗️ installer returned a non-zero exit code
+[18:35:00] ❗️ Error during processing dependencies! Please fix the error and push an update, or try restarting the app.
