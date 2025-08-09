@@ -16,5 +16,5 @@
             run: |
               git config --global user.email "rahimwazir166@gmail.com"
               git config --global user.name "rahimnadan"
-              git remote add space https://HF_USERNAME:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Abdur123/Abdur123/alwasaet-rag
+              git remote add space https://HF_USERNAME:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Abdur123/alwasaet-rag
               git push --force space main # or your default branch
