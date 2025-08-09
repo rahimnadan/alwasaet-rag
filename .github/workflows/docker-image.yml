@@ -12,8 +12,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Full clone to avoid shallow update issues
-          lfs: true       # Enable LFS support
+          fetch-depth: 0
+          lfs: true
 
       - name: Set up Git LFS
         run: |
@@ -24,7 +24,7 @@ jobs:
           git config --global user.email "rahimwazir166@gmail.com"
           git config --global user.name "rahimnadan"
 
-      - name: Push to Hugging Face Space
+      - name: Sync with Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
@@ -34,5 +34,11 @@ jobs:
           # Add Hugging Face Space remote
           git remote add space https://Abdur123:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Abdur123/alwasaet-rag
           
-          # Push to Hugging Face Space
+          # Fetch the remote to understand the differences
+          git fetch space main
+          
+          # Option 1: Merge strategy (preserves HF Space history)
+          git merge space/main --allow-unrelated-histories -X ours --no-edit || true
+          
+          # Push the merged result
           git push space main
