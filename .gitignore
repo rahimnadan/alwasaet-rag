@@ -118,6 +118,10 @@ hf_cache/
 
 # ---- Node / JavaScript (for frontend or docs tooling) ----
 node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
 
 # ---- Documentation build outputs ----
 docs/_build/
@@ -162,8 +166,6 @@ hf_cache/
 
 # Documentation files (optional)
 docs/
-*.pdf
-README.md
 
 # Development configuration
 pyproject.toml
