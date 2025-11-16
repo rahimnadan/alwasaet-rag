@@ -15,6 +15,8 @@ import json
 
 load_dotenv()
 
+# FastAPI application for Alwasaet RAG
+# Provides REST API and WebSocket endpoints for document processing and chat
 app = FastAPI(title="Alwasaet RAG API")
 
 # Enable CORS for frontend
