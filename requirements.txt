@@ -13,5 +13,5 @@ protobuf
 grpcio
 fastapi
 uvicorn[standard]
-python-multipart
+python-multipart>=0.0.18
 websockets
