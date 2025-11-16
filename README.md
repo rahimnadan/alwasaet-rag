@@ -11,6 +11,8 @@ license: mit
 
 # Alwasaet RAG Application
 
+> **🎉 Version 2.0 Now Available!** This application now features a professional FastAPI backend with admin dashboard. See [README_NEW.md](README_NEW.md) for the new architecture.
+
 A multilingual RAG (Retrieval-Augmented Generation) application that supports:
 
 - 📄 **Multiple PDF uploads**
@@ -18,8 +20,51 @@ A multilingual RAG (Retrieval-Augmented Generation) application that supports:
 - 📚 **Citation generation**
 - ⚡ **Fast retrieval** with BGE-M3 embeddings
 - 🔍 **Binary quantization** for efficient vector search
+- 🔐 **Admin dashboard** for document management (v2.0)
+- 💼 **Production-ready** FastAPI backend (v2.0)
 
-## Features
+## 🚀 Quick Start
+
+### Version 2.0 (FastAPI + Modern UI) - Recommended
+
+**Features:**
+- Professional admin dashboard
+- Secure authentication
+- RESTful API
+- Modern Tailwind CSS UI
+- Production-ready
+
+```bash
+# Start the new version
+./start.sh        # Linux/Mac
+start.bat         # Windows
+```
+
+Or with Docker:
+```bash
+docker-compose up --build
+```
+
+Access at: http://localhost:8000
+
+**See [README_NEW.md](README_NEW.md) for complete v2.0 documentation.**
+
+### Version 1.0 (Streamlit) - Legacy
+
+The original Streamlit version is still available:
+
+```bash
+streamlit run app.py
+```
+
+## 📖 Documentation
+
+- **[Version 2.0 Documentation](README_NEW.md)** - FastAPI backend with admin dashboard (Recommended)
+- **Version 1.0 Documentation** - Below (Streamlit-based)
+
+---
+
+## Version 1.0 Features
 
 - Upload multiple PDF documents simultaneously
 - Ask questions in Arabic or English
@@ -28,7 +73,7 @@ A multilingual RAG (Retrieval-Augmented Generation) application that supports:
 - Fast retrieval with <15ms latency
 - Groq-powered inference for quick responses
 
-## Usage
+## Version 1.0 Usage
 
 1. Enter your Groq API key in the sidebar
 2. Upload your PDF documents
@@ -38,6 +83,16 @@ A multilingual RAG (Retrieval-Augmented Generation) application that supports:
 
 ## Technology Stack
 
+### Version 2.0 (New)
+- **Frontend**: HTML + Tailwind CSS + JavaScript
+- **Backend**: FastAPI
+- **Authentication**: JWT (JSON Web Tokens)
+- **Database**: Milvus (in-memory for now)
+- **Embeddings**: BGE-M3 (multilingual)
+- **Vector DB**: Milvus with binary quantization
+- **LLM**: Groq (Moonshot AI Kimi K2)
+
+### Version 1.0 (Legacy)
 - **Frontend**: Streamlit
 - **Embeddings**: BGE-M3 (multilingual)
 - **Vector DB**: Milvus with binary quantization

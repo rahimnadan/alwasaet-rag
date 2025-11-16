@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alwasaet RAG - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .chat-message {
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .loading-dots span {
+            animation: blink 1.4s infinite;
+        }
+        
+        .loading-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .loading-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes blink {
+            0%, 20%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
+        .upload-area {
+            transition: all 0.3s ease;
+        }
+        
+        .upload-area:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+        }
+        
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-rocket text-white text-2xl mr-3"></i>
+                    <span class="text-white text-xl font-bold">Alwasaet RAG</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-white text-sm" id="userInfo">Admin Dashboard</span>
+                    <button onclick="logout()" class="bg-white text-purple-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Stats Dashboard -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="stat-card bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Total Documents</p>
+                        <p class="text-3xl font-bold text-gray-800 mt-2" id="totalDocs">0</p>
+                    </div>
+                    <div class="bg-blue-100 rounded-full p-4">
+                        <i class="fas fa-file-pdf text-blue-600 text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Active Sessions</p>
+                        <p class="text-3xl font-bold text-gray-800 mt-2" id="activeSessions">0</p>
+                    </div>
+                    <div class="bg-green-100 rounded-full p-4">
+                        <i class="fas fa-users text-green-600 text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Total Sessions</p>
+                        <p class="text-3xl font-bold text-gray-800 mt-2" id="totalSessions">0</p>
+                    </div>
+                    <div class="bg-purple-100 rounded-full p-4">
+                        <i class="fas fa-database text-purple-600 text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Document Management Section -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-folder-open mr-2 text-purple-600"></i>
+                    Document Management
+                </h2>
+                
+                <!-- Upload Area -->
+                <div class="mb-6">
+                    <div class="upload-area border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-cloud-upload-alt text-5xl text-gray-400 mb-4"></i>
+                        <p class="text-gray-600 font-medium">Click to upload PDF documents</p>
+                        <p class="text-gray-400 text-sm mt-2">or drag and drop files here</p>
+                        <input type="file" id="fileInput" class="hidden" accept=".pdf" multiple onchange="handleFileUpload(event)">
+                    </div>
+                    <div id="uploadProgress" class="hidden mt-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-600">Uploading...</span>
+                            <span class="text-sm text-gray-600" id="uploadPercent">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div id="uploadBar" class="bg-purple-600 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documents List -->
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Uploaded Documents</h3>
+                        <button onclick="refreshDocuments()" class="text-purple-600 hover:text-purple-800">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div id="documentsList" class="space-y-3 max-h-96 overflow-y-auto">
+                        <p class="text-gray-400 text-center py-8">No documents uploaded yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Interface Section -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col" style="height: 600px;">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-comments mr-2 text-purple-600"></i>
+                    Test Chat Interface
+                </h2>
+                
+                <!-- Chat Messages -->
+                <div id="chatMessages" class="flex-1 overflow-y-auto mb-4 space-y-4 p-4 bg-gray-50 rounded-lg">
+                    <div class="text-center text-gray-400 py-8">
+                        <i class="fas fa-robot text-4xl mb-2"></i>
+                        <p>Upload documents and start chatting!</p>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="flex space-x-2">
+                    <input 
+                        type="text" 
+                        id="chatInput" 
+                        placeholder="Ask a question about your documents..."
+                        class="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                        onkeypress="handleChatKeyPress(event)"
+                    >
+                    <button 
+                        onclick="sendMessage()"
+                        class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition"
+                    >
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const API_BASE_URL = 'http://localhost:8000';
+        let authToken = localStorage.getItem('authToken');
+        let currentSessionId = localStorage.getItem('sessionId');
+
+        // Check authentication
+        if (!authToken) {
+            window.location.href = 'login.html';
+        }
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initializeSession();
+            await loadStats();
+            await refreshDocuments();
+        });
+
+        async function initializeSession() {
+            if (!currentSessionId) {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/api/session/create`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${authToken}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        currentSessionId = data.session_id;
+                        localStorage.setItem('sessionId', currentSessionId);
+                        console.log('Session created:', currentSessionId);
+                    }
+                } catch (error) {
+                    console.error('Error creating session:', error);
+                }
+            }
+        }
+
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/stats`, {
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    }
+                });
+                
+                if (response.ok) {
+                    const stats = await response.json();
+                    document.getElementById('totalDocs').textContent = stats.total_documents;
+                    document.getElementById('activeSessions').textContent = stats.active_sessions;
+                    document.getElementById('totalSessions').textContent = stats.total_sessions;
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        async function handleFileUpload(event) {
+            const files = event.target.files;
+            if (!files.length) return;
+
+            const formData = new FormData();
+            for (let file of files) {
+                formData.append('files', file);
+            }
+
+            const progressDiv = document.getElementById('uploadProgress');
+            const progressBar = document.getElementById('uploadBar');
+            const progressPercent = document.getElementById('uploadPercent');
+
+            progressDiv.classList.remove('hidden');
+            progressBar.style.width = '0%';
+
+            try {
+                // Simulate progress
+                let progress = 0;
+                const progressInterval = setInterval(() => {
+                    progress += 10;
+                    if (progress <= 90) {
+                        progressBar.style.width = progress + '%';
+                        progressPercent.textContent = progress + '%';
+                    }
+                }, 200);
+
+                const response = await fetch(`${API_BASE_URL}/api/documents/upload?session_id=${currentSessionId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    },
+                    body: formData
+                });
+
+                clearInterval(progressInterval);
+                progressBar.style.width = '100%';
+                progressPercent.textContent = '100%';
+
+                if (response.ok) {
+                    const result = await response.json();
+                    setTimeout(() => {
+                        progressDiv.classList.add('hidden');
+                        showNotification('Documents uploaded successfully!', 'success');
+                        refreshDocuments();
+                        loadStats();
+                    }, 500);
+                } else {
+                    throw new Error('Upload failed');
+                }
+            } catch (error) {
+                console.error('Upload error:', error);
+                showNotification('Error uploading documents', 'error');
+                progressDiv.classList.add('hidden');
+            }
+
+            // Reset file input
+            event.target.value = '';
+        }
+
+        async function refreshDocuments() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/documents/list?session_id=${currentSessionId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    displayDocuments(data.documents);
+                }
+            } catch (error) {
+                console.error('Error fetching documents:', error);
+            }
+        }
+
+        function displayDocuments(documents) {
+            const container = document.getElementById('documentsList');
+            
+            if (!documents.length) {
+                container.innerHTML = '<p class="text-gray-400 text-center py-8">No documents uploaded yet</p>';
+                return;
+            }
+
+            container.innerHTML = documents.map(doc => `
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-file-pdf text-red-500"></i>
+                        <div>
+                            <p class="font-medium text-gray-800">${doc.filename}</p>
+                            <p class="text-xs text-gray-500">${new Date(doc.uploaded_at).toLocaleDateString()}</p>
+                        </div>
+                    </div>
+                    <button 
+                        onclick="deleteDocument('${doc.id}')"
+                        class="text-red-500 hover:text-red-700"
+                    >
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        async function deleteDocument(documentId) {
+            if (!confirm('Are you sure you want to delete this document?')) return;
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/documents/${documentId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    }
+                });
+
+                if (response.ok) {
+                    showNotification('Document deleted successfully', 'success');
+                    refreshDocuments();
+                    loadStats();
+                }
+            } catch (error) {
+                console.error('Error deleting document:', error);
+                showNotification('Error deleting document', 'error');
+            }
+        }
+
+        function handleChatKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            // Add user message to chat
+            addMessageToChat('user', message);
+            input.value = '';
+
+            // Show loading indicator
+            const loadingId = addMessageToChat('assistant', '<div class="loading-dots"><span>.</span><span>.</span><span>.</span></div>');
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/query`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        query: message,
+                        session_id: currentSessionId,
+                        top_k: 5
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    // Remove loading indicator
+                    document.getElementById(loadingId).remove();
+                    // Add actual response
+                    addMessageToChat('assistant', data.answer);
+                } else {
+                    throw new Error('Query failed');
+                }
+            } catch (error) {
+                console.error('Error sending message:', error);
+                document.getElementById(loadingId).remove();
+                addMessageToChat('assistant', 'Sorry, I encountered an error processing your question. Please try again.');
+            }
+        }
+
+        function addMessageToChat(role, content) {
+            const container = document.getElementById('chatMessages');
+            
+            // Remove welcome message if exists
+            if (container.children.length === 1 && container.children[0].querySelector('.fa-robot')) {
+                container.innerHTML = '';
+            }
+
+            const messageId = 'msg-' + Date.now();
+            const isUser = role === 'user';
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.id = messageId;
+            messageDiv.className = `chat-message flex ${isUser ? 'justify-end' : 'justify-start'}`;
+            messageDiv.innerHTML = `
+                <div class="max-w-3xl ${isUser ? 'bg-purple-600 text-white' : 'bg-white border border-gray-200'} rounded-lg px-4 py-3 shadow">
+                    <div class="flex items-start space-x-2">
+                        ${!isUser ? '<i class="fas fa-robot text-purple-600 mt-1"></i>' : ''}
+                        <div class="flex-1">${content}</div>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(messageDiv);
+            container.scrollTop = container.scrollHeight;
+            
+            return messageId;
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-20 right-4 px-6 py-3 rounded-lg shadow-lg text-white ${
+                type === 'success' ? 'bg-green-500' : 'bg-red-500'
+            } animate-slideIn`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        function logout() {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('sessionId');
+            window.location.href = 'login.html';
+        }
+
+        // Drag and drop support
+        const uploadArea = document.querySelector('.upload-area');
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#667eea';
+            uploadArea.style.background = 'rgba(102, 126, 234, 0.05)';
+        });
+
+        uploadArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '';
+            uploadArea.style.background = '';
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '';
+            uploadArea.style.background = '';
+            
+            const files = e.dataTransfer.files;
+            const fileInput = document.getElementById('fileInput');
+            fileInput.files = files;
+            handleFileUpload({ target: fileInput });
+        });
+    </script>
+</body>
+</html>

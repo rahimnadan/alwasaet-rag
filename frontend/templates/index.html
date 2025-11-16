@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alwasaet RAG - Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .chat-message {
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .loading-dots span {
+            animation: blink 1.4s infinite;
+        }
+        
+        .loading-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .loading-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes blink {
+            0%, 20%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-rocket text-white text-2xl mr-3"></i>
+                    <span class="text-white text-xl font-bold">Alwasaet RAG</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="text-white hover:text-purple-200 transition">
+                        <i class="fas fa-user-shield mr-2"></i>Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Chat Container -->
+    <div class="flex-1 max-w-5xl mx-auto w-full px-4 py-8 flex flex-col">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">
+                Ask Questions About Your Documents
+            </h1>
+            <p class="text-gray-600">
+                <i class="fas fa-language mr-2"></i>
+                Supports Arabic, English, and 100+ languages
+            </p>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="flex-1 bg-white rounded-xl shadow-lg flex flex-col" style="min-height: 500px;">
+            <!-- Chat Messages -->
+            <div id="chatMessages" class="flex-1 overflow-y-auto p-6 space-y-4">
+                <div class="text-center text-gray-400 py-12">
+                    <i class="fas fa-robot text-6xl mb-4"></i>
+                    <p class="text-xl mb-2">Welcome to Alwasaet RAG!</p>
+                    <p class="text-sm">Start asking questions about your documents</p>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="border-t border-gray-200 p-6">
+                <div class="flex space-x-3">
+                    <input 
+                        type="text" 
+                        id="chatInput" 
+                        placeholder="Type your question here... (English or Arabic)"
+                        class="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                        onkeypress="handleChatKeyPress(event)"
+                    >
+                    <button 
+                        onclick="sendMessage()"
+                        class="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition shadow-lg hover:shadow-xl"
+                    >
+                        <i class="fas fa-paper-plane mr-2"></i>Send
+                    </button>
+                </div>
+                <div class="mt-3 flex items-center justify-center space-x-4 text-sm text-gray-500">
+                    <span><i class="fas fa-shield-alt mr-1"></i>Secure</span>
+                    <span><i class="fas fa-bolt mr-1"></i>Fast</span>
+                    <span><i class="fas fa-check-circle mr-1"></i>Accurate</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow text-center">
+                <i class="fas fa-file-pdf text-3xl text-red-500 mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Support</h3>
+                <p class="text-sm text-gray-600">Upload and query multiple PDFs</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow text-center">
+                <i class="fas fa-globe text-3xl text-blue-500 mb-2"></i>
+                <h3 class="font-semibold text-gray-800">Multilingual</h3>
+                <p class="text-sm text-gray-600">Arabic, English, and more</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow text-center">
+                <i class="fas fa-quote-right text-3xl text-green-500 mb-2"></i>
+                <h3 class="font-semibold text-gray-800">Citations</h3>
+                <p class="text-sm text-gray-600">Get answers with source references</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>© 2024 Alwasaet RAG. All rights reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Powered by BGE-M3 Embeddings & Groq AI</p>
+        </div>
+    </footer>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8000';
+        let sessionId = null;
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initializePublicSession();
+        });
+
+        async function initializePublicSession() {
+            // For demo purposes, we'll show a message that documents need to be uploaded by admin
+            // In production, you might have a shared session or allow users to upload
+            console.log('Chat interface ready');
+        }
+
+        function handleChatKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            // Check if we have a session
+            if (!sessionId) {
+                addMessageToChat('assistant', 'Please contact the administrator to upload documents first. This is a demo interface.');
+                input.value = '';
+                return;
+            }
+
+            // Add user message to chat
+            addMessageToChat('user', message);
+            input.value = '';
+
+            // Show loading indicator
+            const loadingId = addMessageToChat('assistant', '<div class="loading-dots flex space-x-1"><span>.</span><span>.</span><span>.</span></div>');
+
+            try {
+                // This would need authentication in production
+                const response = await fetch(`${API_BASE_URL}/api/query`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        query: message,
+                        session_id: sessionId,
+                        top_k: 5
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById(loadingId).remove();
+                    addMessageToChat('assistant', data.answer);
+                } else {
+                    throw new Error('Query failed');
+                }
+            } catch (error) {
+                console.error('Error sending message:', error);
+                document.getElementById(loadingId).remove();
+                addMessageToChat('assistant', 'Sorry, I encountered an error. Please make sure documents are uploaded in the admin dashboard.');
+            }
+        }
+
+        function addMessageToChat(role, content) {
+            const container = document.getElementById('chatMessages');
+            
+            // Remove welcome message if exists
+            if (container.children.length === 1 && container.children[0].querySelector('.fa-robot')) {
+                container.innerHTML = '';
+            }
+
+            const messageId = 'msg-' + Date.now();
+            const isUser = role === 'user';
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.id = messageId;
+            messageDiv.className = `chat-message flex ${isUser ? 'justify-end' : 'justify-start'}`;
+            messageDiv.innerHTML = `
+                <div class="max-w-3xl ${isUser ? 'bg-purple-600 text-white' : 'bg-gray-100'} rounded-lg px-4 py-3 shadow">
+                    <div class="flex items-start space-x-2">
+                        ${!isUser ? '<i class="fas fa-robot text-purple-600 mt-1"></i>' : ''}
+                        <div class="flex-1">${content}</div>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(messageDiv);
+            container.scrollTop = container.scrollHeight;
+            
+            return messageId;
+        }
+    </script>
+</body>
+</html>
