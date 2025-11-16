@@ -11,3 +11,7 @@ numpy
 tiktoken
 protobuf
 grpcio
+fastapi
+uvicorn[standard]
+python-multipart>=0.0.18
+websockets

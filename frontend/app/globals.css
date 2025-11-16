@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+* {
+  border-color: theme('colors.gray.200');
+}
+
